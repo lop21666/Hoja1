@@ -15,8 +15,8 @@ public class RadioController implements Radio{
 	
 	private boolean encendido;
 	private boolean tipoSenal;
-	private float AMactual = 530;
-	private float FMactual = (float) 87.90;
+	private float AMactual;
+	private float FMactual;
 	private float emisorasGuardadas[] = new float[12];
 	private float emisoraActual;
 
@@ -111,9 +111,21 @@ public class RadioController implements Radio{
 	public void subirEmisora() {
 		
 		if(tipoSenal) {
-			emisoraActual = emisoraActual + 10;
+			
+			if(emisoraActual + 10 <= 1610) {				
+				emisoraActual = emisoraActual + 10f;
+			}else {
+				emisoraActual = 530f;
+			}
+			
 		}else{
-			emisoraActual = (float) (emisoraActual + 0.2);
+			
+			if(emisoraActual + 0.2 <= 107.9) {				
+				emisoraActual = (float) (emisoraActual + 0.2);
+			}else {
+				emisoraActual = (float) 87.9;
+			}
+			
 		}
 	
 	}
@@ -126,9 +138,21 @@ public class RadioController implements Radio{
 	public void bajarEmisora() {
 		
 		if(tipoSenal) {
-			emisoraActual = emisoraActual - 10;
+			
+			if(emisoraActual - 10 >= 530) {				
+				emisoraActual = emisoraActual - 10f;
+			}else {
+				emisoraActual = 1610;
+			}
+			
 		}else{
-			emisoraActual = (float) (emisoraActual - 0.2);
+			
+			if(emisoraActual - 0.2 >= 87.9) {				
+				emisoraActual = (float) (emisoraActual - 0.2);
+			}else {
+				emisoraActual = (float) 107.9;
+			}
+			
 		}
 		
 	}
