@@ -11,7 +11,7 @@ public interface Radio {
 	public String seleccionarEmisoraGuardada(int numBoton);
 	
 	//true: AM // false:FM
-	public String cambiarSenal(Boolean opcion);
+	public String cambiarSenal(boolean opcion);
 	
 	//true: AM // false:FM
 	public boolean getTipoSenal();

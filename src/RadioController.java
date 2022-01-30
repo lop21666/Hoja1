@@ -1,13 +1,29 @@
+/**
+ * Clase Principal
+ * @author Carlos_Edgardo_López_Barrera
+ * @author Brian_Anthony_Carrillo_Monzón
+ * @version 1 29/01/2022
+ *
+ * La clase Controlador, sirve para definir todos los metodos y funcionalidades del programa.
+ */
 
 public class RadioController implements Radio{
 	
+	/**
+    *
+    */
+	
 	private boolean encendido;
 	private boolean tipoSenal;
-	private float AMactual;
-	private float FMactual;
+	private float AMactual = 530;
+	private float FMactual = (float) 87.90;
 	private float emisorasGuardadas[] = new float[12];
 	private float emisoraActual;
 
+	/**
+     * Metodo encenderApagar: sirve para encender o apagar el radio dependiendo del estado actual.
+     * 
+     */
 	@Override
 	public void encenderApagar() {
 		if(encendido) {
@@ -17,6 +33,13 @@ public class RadioController implements Radio{
 		}	
 	}
 
+	/**
+     * Metodo guardarEmisoraActual: sirve para almacenar la emisora que se esta escuchando en ese momento en el boton que el usuario desee.
+     *
+     * @param numBoton: (int)
+     * @return mensaje: (String)
+     * 
+     */
 	@Override
 	public String guardarEmisoraActual(int numBoton) {
 		
@@ -30,6 +53,13 @@ public class RadioController implements Radio{
 		}
 	}
 
+	/**
+     * Metodo seleccionarEmisoraGuardada: sirve seleccionar una emisora que se haya guardado en alguno de los botones.
+     *
+     * @param numBoton: (int)
+     * @return mensaje: (String)
+     * 
+     */
 	@Override
 	public String seleccionarEmisoraGuardada(int numBoton) {
 		
@@ -43,8 +73,15 @@ public class RadioController implements Radio{
 		}
 	}
 
+	/**
+     * Metodo cambiarSenal: sirve para cambiar de FM a AM o de AM a FM dependiendo de la situacion actual.
+     *
+     * @param opcion: (boolean)
+     * @return mensaje: (String)
+     * 
+     */
 	@Override
-	public String cambiarSenal(Boolean opcion) {
+	public String cambiarSenal(boolean opcion) {
 		
 		if(tipoSenal) {
 			tipoSenal = false;
@@ -57,11 +94,19 @@ public class RadioController implements Radio{
 		}
 	}
 
+	/**
+     * Metodo getTipoSenal: sirve para obtener el valor de la variable tipoSenal.
+     * 
+     */
 	@Override
 	public boolean getTipoSenal() {
 		return tipoSenal;
 	}
 
+	/**
+     * Metodo subirEmisora: sirve para cambiar la senal hacia arriba.
+     * 
+     */
 	@Override
 	public void subirEmisora() {
 		
@@ -73,6 +118,10 @@ public class RadioController implements Radio{
 	
 	}
 
+	/**
+     * Metodo bajarEmisora: sirve para cambiar la senal hacia abajo.
+     * 
+     */
 	@Override
 	public void bajarEmisora() {
 		
@@ -84,11 +133,19 @@ public class RadioController implements Radio{
 		
 	}
 
+	/**
+     * Metodo getEmisoraActual: sirve para obtener el valor de la variable emisoraActual.
+     * 
+     */
 	@Override
 	public float getEmisoraActual() {
 		return emisoraActual;
 	}
 
+	/**
+     * Metodo comprobarEncendida: sirve para obtener el valor de la variable encendido.
+     * 
+     */
 	@Override
 	public boolean comprobarEncendida() {
 		return encendido;
