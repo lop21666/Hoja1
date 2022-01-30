@@ -102,15 +102,15 @@ public class RadioController implements Radio{
 	@Override
 	public String cambiarSenal(boolean opcion) {
 		
-		if(tipoSenal) {
-			tipoSenal = false;
-			this.emisoraActual = 87.9f;
-			String mensaje = "El tipo de senal ha cambiado de AM a FM";
-			return mensaje;
-		}else {
+		if(opcion) {
 			tipoSenal = true;
 			this.emisoraActual = 530f;
 			String mensaje = "El tipo de senal ha cambiado de FM a AM";
+			return mensaje;
+		}else {
+			tipoSenal = false;
+			this.emisoraActual = 87.9f;
+			String mensaje = "El tipo de senal ha cambiado de AM a FM";
 			return mensaje;
 		}
 	}
