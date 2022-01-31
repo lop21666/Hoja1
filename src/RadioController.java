@@ -1,5 +1,5 @@
 /**
- * Clase Principal
+ * Clase Radio Controller
  * @author Carlos_Edgardo_López_Barrera
  * @author Brian_Anthony_Carrillo_Monzón
  * @version 1.0 29/01/2022
